@@ -1,4 +1,4 @@
-Given the following data structure:
+#Given the following data structure:
 
 users = {
   "Jonathan" => {
@@ -55,15 +55,46 @@ users = {
     ]
   }
 }
-Complete these tasks:
+# Complete these tasks:
+#
+# Get Jonathan's Twitter handle (i.e. the string "jonnyt")
+p users["Jonathan"][:twitter]
+# Get Erik's hometown
+p users["Erik"][:home_town]
+# Get the array of Erik's lottery numbers
+p users["Erik"][:lottery_numbers]
+# Get the type of Avril's pet Monty
+p users["Avril"][:pets][0][:species]
+# Get the smallest of Erik's lottery numbers
+erik_lottery_numbers = users["Erik"][:lottery_numbers]
+p erik_lottery_numbers.min
+# Return an array of Avril's lottery numbers that are even
+p avril_lottery_numbers = users["Avril"][:lottery_numbers]
+avril_lottery_even_numbers = []
+for number in avril_lottery_numbers
+  if number % 2 == 0
+    avril_lottery_even_numbers.push(number)
+  end
+end
+p avril_lottery_even_numbers
+# Erik is one lottery number short! Add the number 7 to be included in his lottery numbers
+p erik_lottery_numbers.push(7)
+# Change Erik's hometown to Edinburgh
+users["Erik"][:hometown] = "Edinburgh"
+p users["Erik"][:hometown]
+# Add a pet dog to Erik called "Fluffy"
+p users["Erik"][:pets].push({name: "Fluffy", species: "dog"})
+# Add another person to the users hash
+users["Joanna"] = {
+  :twitter => "bridgpally",
+  :lottery_numbers => [5, 15, 3, 26, 6, 12],
+  :home_town => "Neverland",
+  :pets => [
+    {
+      :name => "Rupert",
+      :species => "spider"
+    }
+  ]
+}
 
-Get Jonathan's Twitter handle (i.e. the string "jonnyt")
-Get Erik's hometown
-Get the array of Erik's lottery numbers
-Get the type of Avril's pet Monty
-Get the smallest of Erik's lottery numbers
-Return an array of Avril's lottery numbers that are even
-Erik is one lottery number short! Add the number 7 to be included in his lottery numbers
-Change Erik's hometown to Edinburgh
-Add a pet dog to Erik called "Fluffy"
-Add another person to the users hash
+p users
