@@ -21,7 +21,8 @@ p index
 stops.delete("Livingston")
 p stops
 # Delete "Cumbernauld" from the array by index
-stops.delete_at(2)
+index_cumbernauld = stops.index("Cumbernauld")
+stops.delete_at(index_cumbernauld)
 p stops
 # How many stops there are in the array?
 which_index = stops.length
